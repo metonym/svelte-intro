@@ -95,8 +95,8 @@
   <Row>
     <Column lg={4} md={4}>
       <p>
-        Learn core Svelte concepts by interacting with Watson Natural Language
-        Understanding APIs.
+        Learn core Svelte concepts by building a web app with Watson NLU and the
+        Carbon Design System.
       </p>
       <p>
         <Link href={github_repo} target="_blank">Code on GitHub</Link>
