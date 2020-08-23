@@ -110,6 +110,7 @@ The backend is an [Express](https://github.com/expressjs/express) server that us
 │
 └───.env // file containing service credentials
 └───server.js // Express server
+└───webpack.config.js // Webpack configuration
 └───src
     └──App.svelte // Svelte sources
     └──index.html // HTML template

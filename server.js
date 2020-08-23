@@ -6,13 +6,20 @@ const compression = require("compression");
 const NaturalLanguageUnderstandingV1 = require("ibm-watson/natural-language-understanding/v1");
 const { IamAuthenticator } = require("ibm-watson/auth");
 
+/** Set environment variables from `.env` */
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 const API_KEY = process.env.API_KEY;
 const URL = process.env.URL;
 
+/** Initialize an Express application */
 const app = express()
+  /** Use the `body-parser` module to parse JSON in API requests */
   .use(json())
+
+  /** Use the `compression` module to serve assets with GZIP enabled */
   .use(compression())
+
+  /** Serve static assets from the `build` folder */
   .use(express.static(path.resolve("build")));
 
 const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
@@ -33,5 +40,5 @@ app.post("/api/watson-nlu", async (req, res) => {
 app.get("*", ({}, res) => res.sendFile(path.resolve("build/index.html")));
 
 app.listen(PORT, () => {
-  process.stdout.write(`Express server listening on port ${PORT}\n`);
+  process.stdout.write(`Express server started on: http://localhost:${PORT}\n`);
 });
