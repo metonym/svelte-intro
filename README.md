@@ -1,6 +1,6 @@
 # svelte-intro
 
-> Learn core Svelte concepts by building a web app with [Watson Natural Language Understanding](https://www.ibm.com/cloud/watson-natural-language-understanding) and the [Carbon Design System](https://www.carbondesignsystem.com/).
+> Learn core Svelte concepts by building a simple web app with [Watson Natural Language Understanding](https://www.ibm.com/cloud/watson-natural-language-understanding) and the [Carbon Design System](https://www.carbondesignsystem.com/).
 
 ## Table of Contents
 
@@ -33,6 +33,8 @@ In this workshop, we will learn core Svelte concepts by analyzing several articl
 - reactivity
 - lifecycle methods
 - two-way binding
+
+**What you'll build...**
 
 ![](.assets/ui.png)
 
@@ -102,7 +104,7 @@ npm install
 
 #### Project structure
 
-The frontend consists of Svelte and [webpack](https://webpack.js.org/).
+The frontend is bundled with [webpack](https://webpack.js.org/).
 
 The backend is an [Express](https://github.com/expressjs/express) server that uses the [IBM Watson Node.js SDK](https://github.com/watson-developer-cloud/node-sdk) to interact with the NLU service.
 
