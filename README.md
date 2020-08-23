@@ -12,6 +12,7 @@
   - [1. Create a Watson NLU service](#1-create-a-watson-nlu-service)
   - [2. Configure your environment](#2-configure-your-environment)
   - [3. Install project dependencies](#3-install-project-dependencies)
+    - [Project structure](#project-structure)
   - [4. Run the app](#4-run-the-app)
   - [5. Build the app](#5-build-the-app)
 - [Resources](#resources)
@@ -99,9 +100,25 @@ yarn install
 npm install
 ```
 
+#### Project structure
+
+The frontend consists of Svelte and [webpack](https://webpack.js.org/).
+
+The backend is an [Express](https://github.com/expressjs/express) server that uses the [IBM Watson Node.js SDK](https://github.com/watson-developer-cloud/node-sdk) to interact with the NLU service.
+
+```js
+│
+└───.env // file containing service credentials
+└───server.js // Express server
+└───src
+    └──App.svelte // Svelte sources
+    └──index.html // HTML template
+    └──index.js // entrypoint
+```
+
 ### 4. Run the app
 
-This command runs the app in development mode. The express server is spawned on port 3000 while webpack will serve the frontend built from the `src` folder on port 8080.
+This command runs the app in development mode. The Express server spawns on port 3000 while webpack will serve the frontend (compiled from `src`) on port 8080.
 
 Changes made to files in the `src` folder or `server.js` will trigger a reload.
 
@@ -115,7 +132,7 @@ Visit [http://localhost:8080/](http://localhost:8080/).
 
 ### 5. Build the app
 
-This command builds the frontend app for production. The minified, static assets are outputted to the `build` folder, which the Express server will serve.
+This command instructs webpack to build the frontend app for production. The minified, static assets are outputted to the `build` folder, which the Express server will serve.
 
 ```sh
 yarn build
