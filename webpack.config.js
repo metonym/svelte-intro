@@ -35,6 +35,25 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: "src/index.html" }),
+    new HtmlWebpackPlugin({
+      templateContent: `
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/carbon-components-svelte@0.26.0/css/g90.css"
+          />
+          <title>Intro to Svelte</title>
+        </head>
+        <body></body>
+      </html>    
+    `,
+    }),
   ],
 };

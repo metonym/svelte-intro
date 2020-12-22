@@ -93,7 +93,7 @@
 
 <Grid>
   <Row>
-    <Column lg={4} md={4}>
+    <Column lg={{ span: 5, offset: 4 }}>
       <p>
         Learn core Svelte concepts by building a web app with Watson NLU and the
         Carbon Design System.
@@ -130,7 +130,7 @@
             <Link href={result.retrieved_url} target="_blank">Article URL</Link>
             <time>{result.metadata.publication_date}</time>
           </div>
-          <h2 style="margin-bottom: 1rem;">{result.metadata.title}</h2>
+          <h3 style="margin-bottom: 1rem;">{result.metadata.title}</h3>
           <div>
             {result.metadata.authors.map((author) => author.name).join(', ')}
           </div>
